@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>修仙放置游戏 · 登录账号</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #14161d; color: #d8dbe2; font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    padding: 16px; user-select: none;
+  }
+  h1 { font-size: 17px; font-weight: 600; margin-bottom: 2px; color: #f3e6c4; }
+  .sub { font-size: 12px; color: #7c8496; margin-bottom: 12px; }
+  .list { max-height: 400px; overflow-y: auto; border: 1px solid #2a2e3a; border-radius: 8px; background: #191c24; }
+  .row {
+    padding: 10px 12px; border-bottom: 1px solid #232734; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  }
+  .row:last-child { border-bottom: none; }
+  .row:hover { background: #1f2430; }
+  .row.cur { background: #232f22; }
+  .row.pick { background: #1e2a3a; box-shadow: inset 0 0 0 2px #3d6ea8; }
+  .acc { font-size: 14px; color: #e8ebf2; }
+  .meta { font-size: 11.5px; color: #8b93a6; margin-top: 3px; }
+  .share { font-size: 11.5px; color: #e0b050; margin-top: 3px; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 8px; background: #3a4a2f; color: #b6d48f; white-space: nowrap; }
+  .lvl { font-size: 12.5px; color: #d9b45f; white-space: nowrap; }
+  .del {
+    margin-left: 6px; flex: 0 0 auto; box-sizing: border-box;
+    font-size: 13px; font-family: inherit; line-height: 20px;
+    min-width: 84px; min-height: 38px; padding: 8px 14px; text-align: center;
+    border-radius: 8px; border: 1px solid #5d3336; background: #3a2a2a; color: #e79a9a;
+    cursor: pointer; white-space: nowrap; user-select: none;
+    transition: background .12s ease, color .12s ease, border-color .12s ease;
+  }
+  .del:hover { background: #573032; color: #ffc0c0; border-color: #7d4044; }
+  .del.confirm { background: #b4353a; border-color: #e05c60; color: #fff; font-weight: 600; }
+  .del.confirm:hover { background: #cc4146; }
+  .foot { margin-top: 12px; display: flex; gap: 8px; }
+  input {
+    flex: 1; height: 34px; border-radius: 7px; border: 1px solid #2c3140; background: #10121a;
+    color: #e8ebf2; padding: 0 10px; font-size: 13px; outline: none;
+  }
+  input:focus { border-color: #4a5570; }
+  button {
+    height: 34px; padding: 0 14px; border-radius: 7px; border: none; cursor: pointer;
+    background: #3b6ea5; color: #fff; font-size: 13px;
+  }
+  button:hover { background: #4a82c0; }
+  .enterbar {
+    margin-top: 10px; padding: 10px 12px; border: 1px solid #2a2e3a; border-radius: 8px;
+    background: #191c24; display: flex; align-items: center; gap: 10px;
+  }
+  .pickinfo { flex: 1; font-size: 12.5px; color: #8b93a6; line-height: 1.5; }
+  .pickinfo b { color: #e8ebf2; font-weight: 600; }
+  #btnGo {
+    height: 44px; min-width: 132px; padding: 0 18px; font-size: 14.5px; font-weight: 600;
+    border-radius: 8px; background: #2f7a3f; color: #fff; flex: 0 0 auto;
+  }
+  #btnGo:hover { background: #37914b; }
+  #btnGo:disabled { background: #262b36; color: #5c6474; cursor: not-allowed; }
+  .tip { margin-top: 10px; font-size: 11px; color: #6b7280; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <h1>修仙放置游戏 · 单机版</h1>
+  <div class="sub">选择一个账号进入，或在下方输入新账号名</div>
+  <div class="list" id="list"></div>
+  <div class="foot">
+    <input id="newAcc" placeholder="新账号名（如 ZH...，直接输入后回车）" spellcheck="false">
+    <button id="btnNew">选择这个新账号</button>
+  </div>
+  <div class="enterbar">
+    <div class="pickinfo" id="pickinfo">未选择账号 —— 先点一下账号，再点右侧「进入游戏」</div>
+    <button id="btnGo" disabled>进入游戏</button>
+  </div>
+  <div class="tip">
+    · 两步确认：点账号 = 选中（蓝框）；再点「进入游戏」才会真的进游戏<br>
+    · 「删除」也要点两下（变红后再点一次）才会真的删<br>
+    · 多个账号可以共用同一个角色；删账号时，只要还有别的账号在用，角色存档就会保留<br>
+    · 删掉的东西都会备份到 app/account-trash，随时能找回<br>
+    · 启动默认「直进游戏」；换号 / 删号请用 launch_accounts.bat 打开本窗口
+  </div>
+<script>
+  const { ipcRenderer } = require('electron');
+  const $ = (id) => document.getElementById(id);
+  let CURRENT = '';
+  let PENDING = '';   // 已选中但还没确认的账号（需再点「进入游戏」）
+
+  function fmtTime(t) {
+    if (!t) return '-';
+    const d = new Date(t * 1000);
+    const p = (n) => (n < 10 ? '0' : '') + n;
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+  function choose(name) { ipcRenderer.send('account-choose', name); }
+
+  // 选中（不直接进去）——再点底部「进入游戏」才确认
+  function pick(name, info) {
+    PENDING = name;
+    $('pickinfo').innerHTML = info;
+    $('btnGo').disabled = false;
+    for (const el of document.querySelectorAll('.row')) el.classList.toggle('pick', el.dataset.account === name);
+  }
+  function resetPick(msg) {
+    PENDING = '';
+    $('pickinfo').textContent = msg || '未选择账号 —— 先点一下账号，再点右侧「进入游戏」';
+    $('btnGo').disabled = true;
+    for (const el of document.querySelectorAll('.row')) el.classList.remove('pick');
+  }
+
+  function render(data) {
+    CURRENT = data.current || '';
+    const list = $('list');
+    list.innerHTML = '';
+    for (const a of (data.list || [])) {
+      const row = document.createElement('div');
+      row.className = 'row' + (a.account === CURRENT ? ' cur' : '') + (a.account === PENDING ? ' pick' : '');
+      row.dataset.account = a.account;
+      const left = document.createElement('div');
+      const nameEl = document.createElement('div');
+      nameEl.className = 'acc';
+      nameEl.textContent = a.account;
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      // 角色是否存在看 uuid；名字为空 = 从未命名（游戏内显示「初心者+uuid」是客户端默认）
+      const charTxt = a.uuid
+        ? ('角色 ' + a.uuid + (a.name ? ('「' + a.name + '」') : '（未命名）'))
+        : '尚未创建角色';
+      meta.textContent = charTxt + '　uid ' + a.uid + '　最后登录 ' + fmtTime(a.lastlogin);
+      left.appendChild(nameEl); left.appendChild(meta);
+      const shared = a.sharedWith || [];
+      if (shared.length) {
+        const sh = document.createElement('div');
+        sh.className = 'share';
+        sh.textContent = '与 ' + shared.join('、') + ' 共用角色 ' + a.uuid + '（删本账号不影响该存档）';
+        left.appendChild(sh);
+      }
+      const right = document.createElement('div');
+      right.style.cssText = 'display:flex;align-items:center;flex:0 0 auto';
+      if (a.account === CURRENT) {
+        const b = document.createElement('span');
+        b.className = 'badge'; b.textContent = '上次使用';
+        right.appendChild(b);
+      }
+      const lv = document.createElement('span');
+      lv.className = 'lvl'; lv.textContent = a.level ? ('Lv.' + a.level) : '';
+      right.appendChild(lv);
+
+      // 删除：两下确认（第一下变红，4 秒内再点一下才真删）
+      const del = document.createElement('span');
+      del.className = 'del'; del.textContent = '删除';
+      let armed = 0;
+      const disarm = () => { if (armed) { clearTimeout(armed); armed = 0; del.classList.remove('confirm'); del.textContent = '删除'; } };
+      del.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (!armed) {
+          del.classList.add('confirm'); del.textContent = '确认删除？';
+          armed = setTimeout(disarm, 4000);
+          return;
+        }
+        clearTimeout(armed); armed = 0;
+        const charLine = !a.uuid ? '该账号尚未创建角色。'
+          : (shared.length
+            ? ('角色 ' + a.uuid + ' 的存档会保留（' + shared.join('、') + ' 还在用）。')
+            : ('角色 ' + a.uuid + ' 的存档也会一起移除。'));
+        if (!confirm('确定删除账号「' + a.account + '」？\n\n· ' + charLine + '\n· 所有移除的数据都会备份到 app/account-trash，可找回')) {
+          disarm();
+          return;
+        }
+        ipcRenderer.send('account-delete', a.account);
+      });
+      right.appendChild(del);
+      row.appendChild(left); row.appendChild(right);
+      row.addEventListener('click', () => {
+        const charTxt2 = a.uuid ? ('角色 ' + a.uuid + (a.level ? ('（Lv.' + a.level + '）') : '')) : '尚未创建角色';
+        pick(a.account, '已选中：<b>' + a.account + '</b>　' + charTxt2 +
+          '　uid ' + a.uid + '<br>确认后就进游戏；把鼠标移到别的账号上可改选');
+      });
+      list.appendChild(row);
+    }
+    if (!(data.list || []).length) {
+      const d = document.createElement('div');
+      d.className = 'row'; d.textContent = '（暂无账号，输入名字创建一个吧）';
+      list.appendChild(d);
+    }
+    // 选中的账号若已被删掉/不存在 → 清空选择，避免误进
+    if (PENDING && !(data.list || []).some((a) => a.account === PENDING)) resetPick('刚才选中的账号已不在列表里，请重新选择');
+  }
+
+  ipcRenderer.on('account-data', (e, data) => render(data || {}));
+  ipcRenderer.on('account-deleted', (e, res) => {
+    alert(res && res.ok ? ('已删除。' + (res.msg || '')) : ('删除失败：' + ((res && res.msg) || '未知错误')));
+  });
+  function submitNew() {
+    const v = $('newAcc').value.trim();
+    if (!v) return;
+    const exist = Array.prototype.some.call(document.querySelectorAll('.row'), (el) => el.dataset.account === v);
+    pick(v, '已选中：<b>' + v + '</b>　' + (exist ? '已存在的账号' : '新账号（首次进入会创建角色）') +
+      '<br>确认后就进游戏');
+  }
+  $('btnNew').addEventListener('click', submitNew);
+  $('newAcc').addEventListener('keydown', (e) => { if (e.key === 'Enter') submitNew(); });
+  $('btnGo').addEventListener('click', () => { if (PENDING) choose(PENDING); });
+</script>
+</body>
+</html>

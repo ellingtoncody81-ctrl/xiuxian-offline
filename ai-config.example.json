@@ -1,0 +1,9 @@
+{
+  "_说明": "填好下面的 key 就能让假人用真 AI 说话；不填也能玩（自动降级为内置台词库）。本文件也可改名为 ai-config.txt 并写成 key=xxx 的纯文本。",
+  "provider": "minimax",
+  "base": "https://api.minimax.cn/anthropic",
+  "key": "",
+  "model": "MiniMax-M2.7-highspeed",
+  "maxTokens": 200,
+  "timeout": 15000
+}

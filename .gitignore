@@ -1,0 +1,16 @@
+# 依赖与产物
+node_modules/
+__pycache__/
+*.pyc
+dist/
+build/
+out/
+# 运行期与本地配置
+*.log
+save/
+ai-config.json
+ai-config.txt
+_config.local.json
+# 编辑器
+.vscode/
+.idea/

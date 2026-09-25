@@ -1,0 +1,14 @@
+{
+  "name": "xiuxian-offline-launcher",
+  "version": "0.0.1",
+  "private": true,
+  "description": "修仙放置游戏 单机版 PoC（批次0：零服务器进主城）",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "autotest": "electron . --autotest"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0"
+  }
+}
