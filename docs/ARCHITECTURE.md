@@ -22,7 +22,7 @@ Electron 主进程
 | Redis（zset / kv / 过期） | `solo_redis_ph.json` 快照 + 垫片 | 垫片按官方调用契约实现 `zAdd / zRange / expire ...`，**业务代码 0 改动** |
 | 定时任务 | 进程内定时器 | 快 tick（如结算 90 秒）替代长周期轮询，保证"离线也动" |
 
-## 3. 垫片层（11 个模块）：运行时接管，不改官方文件
+## 3. 垫片层（11 个模块）：运行时接管为主，少量定点改动为辅
 通过 require 钩子在模块加载后替换/包裹官方导出的内部函数，例如：
 - `_solo_boot.js`  离线启动入口（`start({dbDir})`、打印 `SOLO_READY`、自动备份）
 - `_solo_priv.js` / `_solo_reddot.js` / `_solo_gm_mail.js`  私有化改造、红点、GM 邮件
@@ -30,7 +30,15 @@ Electron 主进程
 - `_solo_powertest.js`  战力自测（用于平衡验证）
 - `_solo_agents.js` / `_solo_fakes*.js`  假人系统（见下）
 - `_solo_ai.js`  AI 网关
-**收益**：官方文件一个字节都不改 ⇒ 升级官方包时只需重新对齐垫片锚点。
+
+配套的两份**存储替换**（`shim/server_overrides/`）：
+- `src/util/redis.js`   官方那份是连真 Redis 的封装（839 行 TS）→ 换成 JSON 快照 + 语义垫片
+- `src/util/mongodb.js` 官方那份是连真 Mongo 的封装（720 行 TS）→ 换成 JSON 文件库
+
+**收益**：绝大部分改造不碰官方文件；升级官方包时只需重新对齐少数锚点。
+**代价（要诚实说）**：仍有 **18 个服务端官方文件**必须做「带标记的定点插入/替换」——
+它们要么在函数体内部生效（登录链路、战斗阵容构造），要么是官方 bug；
+逐条列在 [`改造点清单.md`](改造点清单.md)，每条都带注释标记，便于版本对齐。
 
 ## 4. 假人系统：让离线世界"有活人感"
 - **规模**：L1 假人 200（分布在若干"盟"里）+ L2 活跃 NPC 100
@@ -48,15 +56,16 @@ ask({ system, user, maxTokens }) → Promise<string|null>
 - 容错解析：JSON 优先，否则按 `key=value` 逐行读（支持 `#` / `//` 注释、引号、行尾逗号）
 - **无 key ⇒ 直接返回 `null`（0ms）**，业务侧自动降级，不抛异常
 
-## 6. 客户端补丁：最小改动 + 规则化
-官方 H5 构建整体 **约 200 个文件里只有 7 个需要改**：
+## 6. 客户端补丁：最小改动
+拿官方原始构建（1.26 万文件）与改造后逐字节对比，**只有 9 个文件不同**：
 ```
-assets/scriptAsset/index.js   客户端逻辑（登录 / 离线适配）
-assets/pzwj/import/**.json    资源与条目调整（5 个）
-cocos2d-js-min.js             引擎层兼容性小改
+index.html                        启动页调整（+615 B）
+assets/main/index.js              入口逻辑（+566 B）
+assets/scriptAsset/index.js       客户端主逻辑：登录 / 红点 / 引导分流（+1487 B，散布多处）
+cocos2d-js-min.js                 引擎层兼容性小改（+165 B）
+assets/pzwj/import/**.json        5 个数据资源：文案与条目调整（-1919 / -768 / -72 / -6 / -3 B）
 ```
-改动以 `patches/` 里的**锚点规则**表达（原片段 → 新片段），由组装脚本施加到使用者自己的客户端构建上，
-**仓库里不含任何原版文件**。
+改动点与意图逐条见 [`改造点清单.md`](改造点清单.md)。
 
 ## 7. 工程化
 - Conventional Commits + `tools/git-hooks/commit-msg` 校验（不合规直接拦下）
