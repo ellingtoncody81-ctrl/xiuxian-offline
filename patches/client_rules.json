@@ -1,0 +1,570 @@
+{
+ "note": "官方客户端构建 → 改造版：逐字节等价的锚点规则；不含任何原版文件。规则需按数组顺序施加；每条 find 在文件中必须唯一命中。",
+ "files": [
+  {
+   "path": "assets/main/index.js",
+   "bytes_in": 415641,
+   "bytes_out": 416207,
+   "sha256_in": "cc6229f7078a2e7c3ea4c1a1caaedcfa022d9a43656f22867a2dbf48a04e4903",
+   "sha256_out": "91044f3e13eb3ca62cd7d2fb1f38b5bcb55acf5c02cb13edb673cb6cf6a92f9c",
+   "rules": [
+    {
+     "find": "me.clear(),cc.debug.setDisplayStats(!1),window.fps=function(){cc.debug.setDispla",
+     "replace": "me.clear(),cc.debug.setDisplayStats(!1),(function(){if(window.__SOLO_KEEP_BOOT)return console.log(\"[solo] 保留启动画面\");try{var sc=cc.director.getScene();(function w(n){try{n.opacity=0}catch(e){}var c=n.children||[];for(var i=0;i<c.length;i++)w(c[i])})(sc);console.log(\"[solo] 已隐藏启动画面\")}catch(e){}})(),window.fps=function(){cc.debug.setDispla"
+    },
+    {
+     "find": "\\u620f\\u521d\\u59cb\\u5316\\u4e2d(100%)...\",i.setMd(\"10010\"),r.safeAreaRect=cc.sys.",
+     "replace": "\\u620f\\u521d\\u59cb\\u5316\\u4e2d(100%)...\",(function(){if(window.__SOLO_KEEP_BOOT)return console.log(\"[solo] 保留启动画面\");try{var sc=cc.director.getScene();(function w(n){try{n.opacity=0}catch(e){}var c=n.children||[];for(var i=0;i<c.length;i++)w(c[i])})(sc);console.log(\"[solo] 已隐藏启动画面\")}catch(e){}})(),i.setMd(\"10010\"),r.safeAreaRect=cc.sys."
+    }
+   ]
+  },
+  {
+   "path": "assets/pzwj/import/32/322ae7cd-606c-4d9f-a146-f78880c93914.json",
+   "bytes_in": 106278,
+   "bytes_out": 106275,
+   "sha256_in": "0bd4abf50ab4e24514571bf6bc64bd4f0b6240004df675886db1c5845d34f4dc",
+   "sha256_out": "ab4ef7b992cf699505a15db591c438cb9f08515c6241c1d72d6eb66e98a0659d",
+   "rules": [
+    {
+     "find": "ype\":2,\"getType\":\"xinren\",\"getDesc\":\"通过新人礼包获取\",\"goto\":\"22\",\"sort\":50000,\"eps\":{}},{\"id\":\"50001\",\"",
+     "replace": "ype\":2,\"getType\":\"xinren\",\"getDesc\":\"通过新手邮件获取\",\"goto\":\"0\",\"sort\":50000,\"eps\":{}},{\"id\":\"50001\",\""
+    },
+    {
+     "find": "ype\":0,\"getType\":\"xinren\",\"getDesc\":\"通过新人礼包获取\",\"goto\":\"22\",\"sort\":50001,\"eps\":{}},{\"id\":\"50002\",\"",
+     "replace": "ype\":0,\"getType\":\"xinren\",\"getDesc\":\"通过新手邮件获取\",\"goto\":\"0\",\"sort\":50001,\"eps\":{}},{\"id\":\"50002\",\""
+    },
+    {
+     "find": "ype\":0,\"getType\":\"xinren\",\"getDesc\":\"通过新人礼包获取\",\"goto\":\"22\",\"sort\":50002,\"eps\":{}},{\"id\":\"50101\",\"",
+     "replace": "ype\":0,\"getType\":\"xinren\",\"getDesc\":\"通过新手邮件获取\",\"goto\":\"0\",\"sort\":50002,\"eps\":{}},{\"id\":\"50101\",\""
+    }
+   ]
+  },
+  {
+   "path": "assets/pzwj/import/59/591892d5-3293-44ff-a485-e7d689330674.json",
+   "bytes_in": 4165,
+   "bytes_out": 4159,
+   "sha256_in": "73ed59a482a4252208fcd31847489f1ccf7f6b888895b9061fdfb2dfee08417f",
+   "sha256_out": "4a76323be8a431c8ad1e77755ee73f05347be97666f6d3d91acd03ddf0d7248d",
+   "rules": [
+    {
+     "find": ":\"主线关卡\",\"desc\":\"闯关击杀怪物，获得<color=#CD5D31>体力丹</c>\",\"sort\":1,\"items\":[[1,1,50]]},{\"id\"",
+     "replace": ":\"主线关卡\",\"desc\":\"闯关击杀怪物，获得<color=#CD5D31>鼎炉</c>\",\"sort\":1,\"items\":[[1,1,50]]},{\"id\""
+    },
+    {
+     "find": ":\"精英关卡\",\"desc\":\"精英挑战，获得<color=#CD5D31>大量体力丹</c>\",\"sort\":9,\"items\":[[1,1,50]]},{\"id\"",
+     "replace": ":\"精英关卡\",\"desc\":\"精英挑战，获得<color=#CD5D31>大量鼎炉</c>\",\"sort\":9,\"items\":[[1,1,50]]},{\"id\""
+    }
+   ]
+  },
+  {
+   "path": "assets/pzwj/import/6d/6dead4e8-8a74-425a-8979-7ea82a55f58d.json",
+   "bytes_in": 9098,
+   "bytes_out": 7179,
+   "sha256_in": "2283c95d6c50e450fe629dc3a71fcec91ba99a751079ad313ef54ba78e1a014c",
+   "sha256_out": "5d2eee1f4b3c9f19e4e5a8fa40891ef8991b83914f4285b0a64b0fb26d22cc11",
+   "rules": [
+    {
+     "find": ":0,\"eps\":{},\"add\":[],\"items\":[[1,1,20]]},{\"id\":\"99\",\"typeName\":\"云瑶\",\"desc\":\"\",\"count\":1,\"tzid\":\"yunyao\",\"tzName\":\"云瑶\",\"pos\":1,\"wuqiType\":0,\"sex\":0,\"sort\":6,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"沐渊\",\"desc\":\"\",\"count\":2,\"tzid\":\"muyuan\",\"tzName\":\"沐渊\",\"pos\":2,\"wuqiType\":0,\"sex\":1,\"sort\":7,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"星彩\",\"desc\":\"\",\"count\":3,\"tzid\":\"xingcai\",\"tzName\":\"星彩\",\"pos\":3,\"wuqiType\":0,\"sex\":0,\"sort\":8,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"玄奇\",\"desc\":\"\",\"count\":4,\"tzid\":\"xuanqi\",\"tzName\":\"玄奇\",\"pos\":4,\"wuqiType\":0,\"sex\":1,\"sort\":9,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"白荆\",\"desc\":\"\",\"count\":5,\"tzid\":\"baijing\",\"tzName\":\"白荆\",\"pos\":5,\"wuqiType\":0,\"sex\":0,\"sort\":10,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"凌晗\",\"desc\":\"\",\"count\":6,\"tzid\":\"linghan\",\"tzName\":\"凌晗\",\"pos\":6,\"wuqiType\":0,\"sex\":1,\"sort\":11,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"苍葵\",\"desc\":\"\",\"count\":7,\"tzid\":\"cangkui\",\"tzName\":\"苍葵\",\"pos\":7,\"wuqiType\":0,\"sex\":0,\"sort\":12,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"黑曜\",\"desc\":\"\",\"count\":8,\"tzid\":\"heiyao\",\"tzName\":\"黑曜\",\"pos\":8,\"wuqiType\":0,\"sex\":1,\"sort\":13,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]},{\"id\":\"99\",\"typeName\":\"风凌\",\"desc\":\"\",\"count\":9,\"tzid\":\"fengling\",\"tzName\":\"风凌\",\"pos\":9,\"wuqiType\":0,\"sex\":0,\"sort\":14,\"glid\":\"\",\"source\":\"与该道友结缘后获取\",\"goto\":53,\"eps\":{},\"add\":[],\"items\":[]}]]],0,0,[],[],[]]",
+     "replace": ":0,\"eps\":{},\"add\":[],\"items\":[[1,1,20]]}]]],0,0,[],[],[]]"
+    }
+   ]
+  },
+  {
+   "path": "assets/pzwj/import/89/89203c37-d7e3-4f7d-add2-e01e07dac12d.json",
+   "bytes_in": 34721,
+   "bytes_out": 34649,
+   "sha256_in": "e4281fb8263b9b8f683c7918f78ff8b6f8c1bcaf8f8a983185bc829b8a066374",
+   "sha256_out": "f919d725b56f166b178ea841171c36bdedccd1c37985327bcd4961e812344d87",
+   "rules": [
+    {
+     "find": "98,360]},{\"id\":\"12\",\"level\":1,\"name\":\"1级体力丹\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\"",
+     "replace": "98,360]},{\"id\":\"12\",\"level\":1,\"name\":\"1级鼎炉\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "98,360]},{\"id\":\"14\",\"level\":1,\"name\":\"1级体力丹\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\"",
+     "replace": "98,360]},{\"id\":\"14\",\"level\":1,\"name\":\"1级鼎炉\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "98,360]},{\"id\":\"22\",\"level\":1,\"name\":\"1级体力丹\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\"",
+     "replace": "98,360]},{\"id\":\"22\",\"level\":1,\"name\":\"1级鼎炉\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "98,360]},{\"id\":\"24\",\"level\":1,\"name\":\"1级体力丹\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\"",
+     "replace": "98,360]},{\"id\":\"24\",\"level\":1,\"name\":\"1级鼎炉\",\"type\":\"box\",\"post\":1,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "56000]},{\"id\":\"201\",\"level\":1,\"name\":\"1级体力丹\",\"type\":\"box\",\"post\":2,\"npow\":1,\"ctype\"",
+     "replace": "56000]},{\"id\":\"201\",\"level\":1,\"name\":\"1级鼎炉\",\"type\":\"box\",\"post\":2,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": ",3600]},{\"id\":\"202\",\"level\":2,\"name\":\"2级体力丹\",\"type\":\"box\",\"post\":3,\"npow\":1,\"ctype\"",
+     "replace": ",3600]},{\"id\":\"202\",\"level\":2,\"name\":\"2级鼎炉\",\"type\":\"box\",\"post\":3,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": ",8760]},{\"id\":\"203\",\"level\":3,\"name\":\"3级体力丹\",\"type\":\"box\",\"post\":4,\"npow\":1,\"ctype\"",
+     "replace": ",8760]},{\"id\":\"203\",\"level\":3,\"name\":\"3级鼎炉\",\"type\":\"box\",\"post\":4,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "14400]},{\"id\":\"204\",\"level\":4,\"name\":\"4级体力丹\",\"type\":\"box\",\"post\":4,\"npow\":1,\"ctype\"",
+     "replace": "14400]},{\"id\":\"204\",\"level\":4,\"name\":\"4级鼎炉\",\"type\":\"box\",\"post\":4,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "20520]},{\"id\":\"205\",\"level\":5,\"name\":\"5级体力丹\",\"type\":\"box\",\"post\":4,\"npow\":1,\"ctype\"",
+     "replace": "20520]},{\"id\":\"205\",\"level\":5,\"name\":\"5级鼎炉\",\"type\":\"box\",\"post\":4,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "27120]},{\"id\":\"206\",\"level\":6,\"name\":\"6级体力丹\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\"",
+     "replace": "27120]},{\"id\":\"206\",\"level\":6,\"name\":\"6级鼎炉\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "34200]},{\"id\":\"207\",\"level\":7,\"name\":\"7级体力丹\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\"",
+     "replace": "34200]},{\"id\":\"207\",\"level\":7,\"name\":\"7级鼎炉\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "41760]},{\"id\":\"208\",\"level\":8,\"name\":\"8级体力丹\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\"",
+     "replace": "41760]},{\"id\":\"208\",\"level\":8,\"name\":\"8级鼎炉\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "49800]},{\"id\":\"209\",\"level\":9,\"name\":\"9级体力丹\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\"",
+     "replace": "49800]},{\"id\":\"209\",\"level\":9,\"name\":\"9级鼎炉\",\"type\":\"box\",\"post\":5,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "320]},{\"id\":\"210\",\"level\":10,\"name\":\"10级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "320]},{\"id\":\"210\",\"level\":10,\"name\":\"10级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "320]},{\"id\":\"211\",\"level\":11,\"name\":\"11级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "320]},{\"id\":\"211\",\"level\":11,\"name\":\"11级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "800]},{\"id\":\"212\",\"level\":12,\"name\":\"12级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "800]},{\"id\":\"212\",\"level\":12,\"name\":\"12级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "760]},{\"id\":\"213\",\"level\":13,\"name\":\"13级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "760]},{\"id\":\"213\",\"level\":13,\"name\":\"13级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "200]},{\"id\":\"214\",\"level\":14,\"name\":\"14级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "200]},{\"id\":\"214\",\"level\":14,\"name\":\"14级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "120]},{\"id\":\"215\",\"level\":15,\"name\":\"15级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "120]},{\"id\":\"215\",\"level\":15,\"name\":\"15级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "520]},{\"id\":\"216\",\"level\":16,\"name\":\"16级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "520]},{\"id\":\"216\",\"level\":16,\"name\":\"16级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "400]},{\"id\":\"217\",\"level\":17,\"name\":\"17级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "400]},{\"id\":\"217\",\"level\":17,\"name\":\"17级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "760]},{\"id\":\"218\",\"level\":18,\"name\":\"18级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "760]},{\"id\":\"218\",\"level\":18,\"name\":\"18级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "600]},{\"id\":\"219\",\"level\":19,\"name\":\"19级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "600]},{\"id\":\"219\",\"level\":19,\"name\":\"19级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    },
+    {
+     "find": "920]},{\"id\":\"220\",\"level\":20,\"name\":\"20级体力丹\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\"",
+     "replace": "920]},{\"id\":\"220\",\"level\":20,\"name\":\"20级鼎炉\",\"type\":\"box\",\"post\":6,\"npow\":1,\"ctype\""
+    }
+   ]
+  },
+  {
+   "path": "assets/pzwj/import/8c/8c76ddfa-1253-4d67-8294-3ff77d5a10b0.json",
+   "bytes_in": 21996,
+   "bytes_out": 21228,
+   "sha256_in": "2a2b9ef48a7331b9f63b413e63f84edf37d93e58f93b4969ecb88f93261c982c",
+   "sha256_out": "5f5a8fe9d55b4732c1c61f204bed507faa1beb13dbbb77970d6f2ba8af2d1bb9",
+   "rules": [
+    {
+     "find": "p\":\"1\",\"plat\":\"local\",\"wayhttp\":\"http://140.143.150.31:3030/\",\"cfgUrl\":\"http://43.1248.169.164:4030/\",\"params\":null,\"logo\":\"\",\"loadingTips1",
+     "replace": "p\":\"1\",\"plat\":\"local\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"\",\"loadingTips1"
+    },
+    {
+     "find": "roup\":\"1\",\"plat\":\"local\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4050/\",\"params\":null,\"logo\":\"\",\"loadingTips1",
+     "replace": "roup\":\"1\",\"plat\":\"local\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"\",\"loadingTips1"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"wechat\",\"wayhttp\":\"https://shkaifa.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4046/\",\"params\":null,\"logo\":\"\",\"loadingTips1",
+     "replace": "oup\":\"1\",\"plat\":\"wechat\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"\",\"loadingTips1"
+    },
+    {
+     "find": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"https://shkaifa.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4046/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审[",
+     "replace": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审["
+    },
+    {
+     "find": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://shzs.xmsgame.com:4002/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审[",
+     "replace": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审["
+    },
+    {
+     "find": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4050/\",\"logo\":\"xxmxc\",\"loadingTips1\":\"网络游戏出版",
+     "replace": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xxmxc\",\"loadingTips1\":\"网络游戏出版"
+    },
+    {
+     "find": "roup\":\"1\",\"plat\":\"local\",\"wayhttp\":\"https://shanhaitest.weimigames.com/\",\"cfgUrl\":\"\",\"params\":null,\"logo\":\"\",\"loadingTips1\"",
+     "replace": "roup\":\"1\",\"plat\":\"local\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"\",\"loadingTips1\""
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://192.168.100.130:30301/\",\"cfgUrl\":\"\",\"params\":null,\"logo\":\"\",\"loadingTips1\"",
+     "replace": "oup\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"\",\"loadingTips1\""
+    },
+    {
+     "find": "roup\":\"1\",\"plat\":\"local\",\"wayhttp\":\"https://shanhai.weimigames.com/\",\"cfgUrl\":\"https://shanhai.weimigames.com:4002/\",\"params\":null,\"logo\":\"\",\"loadingTips1",
+     "replace": "roup\":\"1\",\"plat\":\"local\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"\",\"loadingTips1"
+    },
+    {
+     "find": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"https://shzs.xmsgame.com/\",\"cfgUrl\":\"https://shzs.xmsgame.com:4002/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审[",
+     "replace": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审["
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"wechat\",\"wayhttp\":\"https://shanhai.weimigames.com/\",\"cfgUrl\":\"https://shanhai.weimigames.com:4002/\",\"params\":null,\"logo\":\"\",\"loadingTips1",
+     "replace": "oup\":\"1\",\"plat\":\"wechat\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"\",\"loadingTips1"
+    },
+    {
+     "find": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"https://shanhai.weimigames.com/\",\"cfgUrl\":\"https://shanhai.weimigames.com:4002/\",\"logo\":\"xxmxc\",\"loadingTips1\":\"网络游戏出版",
+     "replace": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xxmxc\",\"loadingTips1\":\"网络游戏出版"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"tiktok\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4050/\",\"logo\":\"\",\"loadingTips1\":\"\",\"loadingT",
+     "replace": "oup\":\"1\",\"plat\":\"tiktok\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"\",\"loadingTips1\":\"\",\"loadingT"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"tiktok\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://shanhai.weimigames.com:4002/\",\"logo\":\"\",\"loadingTips1\":\"\",\"loadingT",
+     "replace": "oup\":\"1\",\"plat\":\"tiktok\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"\",\"loadingTips1\":\"\",\"loadingT"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"wechat\",\"wayhttp\":\"https://shanhaiad.weimigames.com/\",\"cfgUrl\":\"https://shanhaiad.weimigames.com:4002/\",\"logo\":\"dxdq\",\"loadingTips1\":\"\",\"load",
+     "replace": "oup\":\"1\",\"plat\":\"wechat\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"dxdq\",\"loadingTips1\":\"\",\"load"
+    },
+    {
+     "find": "p\":\"1\",\"plat\":\"ylWechat\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4050/\",\"logo\":\"xjwd\",\"loadingTips1\":\"出版单位:北京",
+     "replace": "p\":\"1\",\"plat\":\"ylWechat\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xjwd\",\"loadingTips1\":\"出版单位:北京"
+    },
+    {
+     "find": "p\":\"1\",\"plat\":\"ylWechat\",\"wayhttp\":\"https://shanhaiwd.weimigames.com/\",\"cfgUrl\":\"https://shanhaiwd.weimigames.com:4002/\",\"logo\":\"xjwd\",\"loadingTips1\":\"出版单位:北京",
+     "replace": "p\":\"1\",\"plat\":\"ylWechat\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xjwd\",\"loadingTips1\":\"出版单位:北京"
+    },
+    {
+     "find": "p\":\"1\",\"plat\":\"ylTiktok\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4050/\",\"params\":null,\"logo\":\"xjwd\",\"loadingT",
+     "replace": "p\":\"1\",\"plat\":\"ylTiktok\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"xjwd\",\"loadingT"
+    },
+    {
+     "find": "p\":\"1\",\"plat\":\"ylTiktok\",\"wayhttp\":\"https://shanhaiwd.weimigames.com/\",\"cfgUrl\":\"https://shanhaiwd.weimigames.com:4002/\",\"params\":null,\"logo\":\"xjwd\",\"loadingT",
+     "replace": "p\":\"1\",\"plat\":\"ylTiktok\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"params\":null,\"logo\":\"xjwd\",\"loadingT"
+    },
+    {
+     "find": "up\":\"1\",\"plat\":\"zhiling\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4046/\",\"logo\":\"xlqx\",\"loadingTips1\":\"批准文号: 新",
+     "replace": "up\":\"1\",\"plat\":\"zhiling\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xlqx\",\"loadingTips1\":\"批准文号: 新"
+    },
+    {
+     "find": "up\":\"1\",\"plat\":\"zhiling\",\"wayhttp\":\"https://shanhai.weimigames.com/\",\"cfgUrl\":\"https://shanhai.weimigames.com:4002/\",\"logo\":\"xlqx\",\"loadingTips1\":\"批准文号: 新",
+     "replace": "up\":\"1\",\"plat\":\"zhiling\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xlqx\",\"loadingTips1\":\"批准文号: 新"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"qiuwan\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4050/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：成都盈",
+     "replace": "oup\":\"1\",\"plat\":\"qiuwan\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：成都盈"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"qiuwan\",\"wayhttp\":\"https://shyitian.xmsgame.com/\",\"cfgUrl\":\"https://shyitian.xmsgame.com:4002/\",\"logo\":\"ytxyl\",\"loadingTips1\":\"出版单位：成",
+     "replace": "oup\":\"1\",\"plat\":\"qiuwan\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"ytxyl\",\"loadingTips1\":\"出版单位：成"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"qiuwan\",\"wayhttp\":\"https://shyitian.xmsgame.com/\",\"cfgUrl\":\"https://shyitian.xmsgame.com:4002/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：三辰影",
+     "replace": "oup\":\"1\",\"plat\":\"qiuwan\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：三辰影"
+    },
+    {
+     "find": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://office.weimigames.com:4050/\",\"logo\":\"jyjt\",\"loadingTips1\":\"出版单位：杭州",
+     "replace": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"jyjt\",\"loadingTips1\":\"出版单位：杭州"
+    },
+    {
+     "find": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"https://shanhai.weimigames.com/\",\"cfgUrl\":\"https://shanhai.weimigames.com:4002/\",\"logo\":\"jyjt\",\"loadingTips1\":\"出版单位：杭州",
+     "replace": "\"group\":\"1\",\"plat\":\"huo\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"jyjt\",\"loadingTips1\":\"出版单位：杭州"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"taobao\",\"wayhttp\":\"https://shkaifa.xmsgame.com:3031/\",\"cfgUrl\":\"https://shtb.xmsgame.com:4002/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：三辰影",
+     "replace": "oup\":\"1\",\"plat\":\"taobao\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：三辰影"
+    },
+    {
+     "find": "oup\":\"1\",\"plat\":\"taobao\",\"wayhttp\":\"https://shtb.xmsgame.com/\",\"cfgUrl\":\"https://shtb.xmsgame.com:4002/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：三辰影",
+     "replace": "oup\":\"1\",\"plat\":\"taobao\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"xyx\",\"loadingTips1\":\"出版单位：三辰影"
+    },
+    {
+     "find": "roup\":\"1\",\"plat\":\"wan17\",\"wayhttp\":\"https://shshenhe.xmsgame.com/\",\"cfgUrl\":\"https://shshenhe.xmsgame.com:4002/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审[",
+     "replace": "roup\":\"1\",\"plat\":\"wan17\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审["
+    },
+    {
+     "find": "roup\":\"1\",\"plat\":\"wan17\",\"wayhttp\":\"https://wan17.xmsgame.com/\",\"cfgUrl\":\"https://wan17.xmsgame.com:4002/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审[",
+     "replace": "roup\":\"1\",\"plat\":\"wan17\",\"wayhttp\":\"http://solo.local/\",\"cfgUrl\":\"http://solo.local/\",\"logo\":\"\",\"loadingTips1\":\"批准文号: 新广出审["
+    }
+   ]
+  },
+  {
+   "path": "assets/scriptAsset/index.js",
+   "bytes_in": 5165669,
+   "bytes_out": 5167156,
+   "sha256_in": "55f4b2e5e2fdaa7ff36e3761adf246eb9923f37d67ef603359b25ac2b2ffc9e2",
+   "sha256_out": "ad7af73943c70260637611404fd6fb2d2292dcd15db2644bfff5bf41131302a7",
+   "rules": [
+    {
+     "find": "t),e.prototype.showLoginView=function(){s.default.ShowUI(a.default)},e}(t(\"./PlatformBase\").default);i.def",
+     "replace": "t),e.prototype.showLoginView=function(){var t=\"\";try{var e=cc.sys.localStorage.getItem(\"model_login\");e&&(t=(JSON.parse(e)||{}).login||\"\")}catch(t){}t||(t=\"ZH18886938789\"),console.log(\"[solo] 直进游戏: 跳过登录页, 账号=\"+t),this.openId=t,this.login()},e}(t(\"./PlatformBase\").default);i.def"
+    },
+    {
+     "find": "totype.checkLoginRed=function(t){return!!l.default.page.checkOpen(t)&&(null==this.loginRedInfo[t]||1==this.loginRedInfo[t])},e.prototype.sendSetRedLevel=function(t",
+     "replace": "totype.checkLoginRed=function(t){return!1/*[solo v4.35]登录红点=纯内存，重登必复现→永久关闭*/},e.prototype.sendSetRedLevel=function(t"
+    },
+    {
+     "find": "(t)},e.prototype.onClickHead=function(){Number(this.data.uuid)<1e5?y.default.ShowTips(\"\\u6682\\u65f6\\u65e0\\u6cd5\\u67e5\\u770b\\u8be5\\u73a9\\u5bb6\"):h.default.user.sendUserLookFuuidAll(this",
+     "replace": "(t)},e.prototype.onClickHead=function(){h.default.user.sendUserLookFuuidAll(this"
+    },
+    {
+     "find": "=l.default.sevBack.actJjcLog.a[this.id];Number(t.uuid)<1e5?d.default.ShowTips(\"\\u6682\\u65f6\\u65e0\\u6cd5\\u67e5\\u770b\\u8be5\\u73a9\\u5bb6\"):l.default.user.sendUserLookFuuidAll(t.uu",
+     "replace": "=l.default.sevBack.actJjcLog.a[this.id];l.default.user.sendUserLookFuuidAll(t.uu"
+    },
+    {
+     "find": "p.default.chibangInfo.getItem(l);null!=_&&d.default.reddot.isShowUnlock(s.RedDotType.unlockWing)?(this.imgWing.active=!0,g.default.loadT",
+     "replace": "p.default.chibangInfo.getItem(l);null!=_?(this.imgWing.active=!0,g.default.loadT"
+    },
+    {
+     "find": "Label(this.txtHelp,p.showTime(l.default.time.sevTime-l.default.sevBack.actClub.help.htype.dongtian+1800,\"8\")):g.uiCommon.setLabel(this.txtHelp,",
+     "replace": "Label(this.txtHelp,p.showTime(l.default.sevBack.actClub.help.htype.dongtian+(this.cdTime||1800)-l.default.time.sevTime,\"8\")):g.uiCommon.setLabel(this.txtHelp,"
+    },
+    {
+     "find": "gameMethod.isEmpty(t)&&(this.clubHelp=t,g.uiCommon.setLabel(this.txtName,this.cl",
+     "replace": "gameMethod.isEmpty(t)&&(this.clubHelp=t,this.chatInfo||(null!=this.clubHelp.helps[l.default.user.uuid]||this.clubHelp.user.uuid==l.default.user.uuid?this.btnHelp.active=!1:this.clubHelp.otime<=l.default.time.sevTime?(this.btnHelp.active=!0,g.uiCommon.setState(this.btnHelp,1),this.btnHelp.getComponent(cc.Button).interactable=!1):(this.btnHelp.active=!0,g.uiCommon.setState(this.btnHelp,0),this.btnHelp.getComponent(cc.Button).interactable=!0)),g.uiCommon.setLabel(this.txtName,this.cl"
+    },
+    {
+     "find": ".loadUserHead(this.imgUser,this.chatInfo.user),!u.gameMethod.isEmpty(this.clubHe",
+     "replace": ".loadUserHead(this.imgUser,this.chatInfo?this.chatInfo.user:this.clubHelp.user),!u.gameMethod.isEmpty(this.clubHe"
+    },
+    {
+     "find": "},e.prototype.onClickHelp=function(){if(this.chatInfo.user.uuid==l.default.user.uuid){if(l.default.sevB",
+     "replace": "},e.prototype.onClickHelp=function(){if((this.chatInfo?this.chatInfo.user.uuid:this.clubHelp.user.uuid)==l.default.user.uuid){if(l.default.sevB"
+    },
+    {
+     "find": "se l.default.mine.gotoUuid=this.chatInfo.user.uuid,l.default.page.openMine()},a(",
+     "replace": "se l.default.mine.gotoUuid=this.chatInfo?this.chatInfo.user.uuid:this.clubHelp.user.uuid,l.default.page.openMine()},a("
+    },
+    {
+     "find": "ult.loadBundlePrefab(\"club/chatContent\")},e.prototype.onShow=function(){m.uiComm",
+     "replace": "ult.loadBundlePrefab(\"club/chatContent\"),this.ui.btnClubFight&&(this.ui.btnClubFight.active=!1,console.log(\"[solo] 仙盟争霸按钮已隐藏\"))},e.prototype.onShow=function(){m.uiComm"
+    },
+    {
+     "find": "mData.uuid==h.default.user.uuid;var r;r=0==s.gameMethod.isEmpty(this.itemData.sevBack)?h.default.zhanLi.getOtherTotalZhanLi(this.itemData):h.default.zhanLi.getCurTotalZhanLi();var g=this.itemData.rid<=3?this.txtZha",
+     "replace": "mData.uuid==h.default.user.uuid;var r;r=h.default.zhanLi.getOtherTotalZhanLi(this.itemData);var g=this.itemData.rid<=3?this.txtZha"
+    },
+    {
+     "find": "r.default.sevBack.actWanXiang.mfList[h]?r.default.sevBack.actWanXiang.mfList[h].step:1,f=r.default.wanXiang.getMiFaDesc",
+     "replace": "r.default.sevBack.actWanXiang.mfList[h]?(r.default.sevBack.actWanXiang.mfList[h]||{}).step:1,f=r.default.wanXiang.getMiFaDesc"
+    },
+    {
+     "find": "nction(){if(this.ui.gProgress.active=!1,u.gameMethod.isEmpty(d.default.sevBack.playerInfo.list)?(this.enterGameSid=d.default.sevBack.play",
+     "replace": "nction(){if(this.ui.gProgress.active=!1,!0?(console.log(\"[solo] 直进游戏: 跳过选服页\"),this.enterGameSid=d.default.sevBack.play"
+    },
+    {
+     "find": "_base),d.default.window.loadMainAssets()},e.prototype.onClickEnterGame=function(",
+     "replace": "_base),d.default.window.loadMainAssets(),(function(){if(window.__SOLO_KEEP_BOOT)return console.log(\"[solo] 保留启动画面\");try{var sc=cc.director.getScene();(function w(n){try{n.opacity=0}catch(e){}var c=n.children||[];for(var i=0;i<c.length;i++)w(c[i])})(sc);console.log(\"[solo] 已隐藏启动画面\")}catch(e){}})()},e.prototype.onClickEnterGame=function("
+    },
+    {
+     "find": "his.roleNode.parent=this.gRole);var n;n=0==s.gameMethod.isEmpty(this.itemData.sevBack)?u.default.zhanLi.getOtherTotalZhanLi(this.itemData):u.default.zhanLi.getCurTotalZhanLi(),c.uiCommon.setLabel(this.txtZhanLi,l.d",
+     "replace": "his.roleNode.parent=this.gRole);var n;n=u.default.zhanLi.getOtherTotalZhanLi(this.itemData),c.uiCommon.setLabel(this.txtZhanLi,l.d"
+    },
+    {
+     "find": "y.uiCommon.setLabel(this.ui.txtLv,\"Lv.\"+h.default.sevBack.actWanXiang.mfList[this.mfId].level),y.uiCommon.setLabel(this.ui.txtStage,h.default.sevBack.actWanXiang.mfList[this.mfId].step+\"\\u9636\"+(1==this.xfinfoCfg.type?\"",
+     "replace": "y.uiCommon.setLabel(this.ui.txtLv,\"Lv.\"+(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).level),y.uiCommon.setLabel(this.ui.txtStage,(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).step+\"\\u9636\"+(1==this.xfinfoCfg.type?\""
+    },
+    {
+     "find": "ototype.upTuPoCostInfo=function(){var t=h.default.sevBack.actWanXiang.mfList[this.mfId].step,e=u.default.wanxiangXfstep.getItem",
+     "replace": "ototype.upTuPoCostInfo=function(){var t=(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).step,e=u.default.wanxiangXfstep.getItem"
+    },
+    {
+     "find": ",this.ui.imgTuPoRed.active=!1,!i){var o=h.default.sevBack.actWanXiang.mfList[this.mfId].chip,n=u.default.wanxiangXfstep.getItem(h.default.sevBack.actWanXiang.mfList[this.mfId].step+\"\").need,a=o>=n?\"#209839\":\"#C83926",
+     "replace": ",this.ui.imgTuPoRed.active=!1,!i){var o=(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).chip,n=u.default.wanxiangXfstep.getItem((h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).step+\"\").need,a=o>=n?\"#209839\":\"#C83926"
+    },
+    {
+     "find": "rototype.upFightEffect=function(){var t=h.default.sevBack.actWanXiang.mfList[this.mfId].level,e=u.default.wanxiangXflv.getItem(",
+     "replace": "rototype.upFightEffect=function(){var t=(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).level,e=u.default.wanxiangXflv.getItem("
+    },
+    {
+     "find": "},e.prototype.checkMax=function(){var t=h.default.sevBack.actWanXiang.mfList[this.mfId].step,e=u.default.wanxiangXfstep.getItem",
+     "replace": "},e.prototype.checkMax=function(){var t=(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).step,e=u.default.wanxiangXfstep.getItem"
+    },
+    {
+     "find": ".onClickShengJi=function(){var t=this,e=h.default.sevBack.actWanXiang.mfList[this.mfId].level,i=u.default.wanxiangXflv.getItem(",
+     "replace": ".onClickShengJi=function(){var t=this,e=(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).level,i=u.default.wanxiangXflv.getItem("
+    },
+    {
+     "find": "Cfg.mwLock[0],i=t.xfinfoCfg.mwLock[1],o=h.default.sevBack.actWanXiang.mfList[t.mfId].level;o!=e&&o!=i||v.default.ShowTips(\"\\",
+     "replace": "Cfg.mwLock[0],i=t.xfinfoCfg.mwLock[1],o=(h.default.sevBack.actWanXiang.mfList[t.mfId]||{}).level;o!=e&&o!=i||v.default.ShowTips(\"\\"
+    },
+    {
+     "find": "totype.onClickChongZhi=function(){if(1==h.default.sevBack.actWanXiang.mfList[this.mfId].level)return v.default.ShowTips(\"\\u65e0",
+     "replace": "totype.onClickChongZhi=function(){if(1==(h.default.sevBack.actWanXiang.mfList[this.mfId]||{}).level)return v.default.ShowTips(\"\\u65e0"
+    },
+    {
+     "find": "fo.getItem(e);return i.pinzhi==o.pinzhi?u.default.sevBack.actWanXiang.mfList[e].level-u.default.sevBack.actWanXiang.mfList[t].level:o.pinzhi-i.pinzhi}),e.length>0){v",
+     "replace": "fo.getItem(e);return i.pinzhi==o.pinzhi?(u.default.sevBack.actWanXiang.mfList[e]||{}).level-(u.default.sevBack.actWanXiang.mfList[t]||{}).level:o.pinzhi-i.pinzhi}),e.length>0){v"
+    },
+    {
+     "find": "},e.prototype.upUIInfo=function(){var t=l.default.sevBack.actWanXiang.mfList[this.mfId].step,e=s.default.wanxiangXfstep.getItem",
+     "replace": "},e.prototype.upUIInfo=function(){var t=(l.default.sevBack.actWanXiang.mfList[this.mfId]||{}).step,e=s.default.wanxiangXfstep.getItem"
+    },
+    {
+     "find": "his.ui.txtNextSkillLv,o+\"\\u9636\")}var h=l.default.sevBack.actWanXiang.mfList[this.mfId].chip,r=e.need;m.uiCommon.setLabel(this.",
+     "replace": "his.ui.txtNextSkillLv,o+\"\\u9636\")}var h=(l.default.sevBack.actWanXiang.mfList[this.mfId]||{}).chip,r=e.need;m.uiCommon.setLabel(this."
+    },
+    {
+     "find": "},e.prototype.checkMax=function(){var t=l.default.sevBack.actWanXiang.mfList[this.mfId].step,e=s.default.wanxiangXfstep.getItem",
+     "replace": "},e.prototype.checkMax=function(){var t=(l.default.sevBack.actWanXiang.mfList[this.mfId]||{}).step,e=s.default.wanxiangXfstep.getItem"
+    },
+    {
+     "find": "ype.onClickTuPo=function(){var t=this,e=l.default.sevBack.actWanXiang.mfList[this.mfId].step,i=s.default.wanxiangXfstep.getItem(e+\"\");if(l.default.sevBack.actWanXiang.mfList[this.mfId].chip<i.need)return f.default.ShowTips(\"",
+     "replace": "ype.onClickTuPo=function(){var t=this,e=(l.default.sevBack.actWanXiang.mfList[this.mfId]||{}).step,i=s.default.wanxiangXfstep.getItem(e+\"\");if((l.default.sevBack.actWanXiang.mfList[this.mfId]||{}).chip<i.need)return f.default.ShowTips(\""
+    },
+    {
+     "find": "Item=function(t){this.item=t,this.fuuid=this.item.my.user.uuid==h.default.user.uuid?\"\":this.item.my.user.uuid,this.item.my.user.uuid==h.default.user.uuid?(this.item.my",
+     "replace": "Item=function(t){this.item=t,this.fuuid=(this.item.my.user||{uuid:\"\"}).uuid==h.default.user.uuid?\"\":(this.item.my.user||{uuid:\"\"}).uuid,(this.item.my.user||{uuid:\"\"}).uuid==h.default.user.uuid?(this.item.my"
+    },
+    {
+     "find": "atform==cc.sys.DESKTOP_BROWSER&&(window.showUI=function(){console.log(\"uiList\",t",
+     "replace": "atform==cc.sys.DESKTOP_BROWSER&&(window.__UIMNG=t.instance,window.__UIHELP=h.default,window.__JUMP=function(n,z){var c=cc.js.getClassByName(n);if(!c){console.warn(\"[JUMP] 没有这个 UI 类: \"+n);return null}window.__UIMNG.openUI(c,z||10001);return c},(function(){if(window.__FROZEN_GUARD_PATCHED)return;window.__FROZEN_GUARD_PATCHED=1;window.__KN=0;setInterval(function(){try{if(typeof cc==='undefined'||!cc.director)return;var s=cc.director.getScene();if(s&&s.active===false){s.active=true;window.__KN++;}}catch(e){}},400);})(),window.showUI=function(){console.log(\"uiList\",t"
+    },
+    {
+     "find": ".order.canPay,this.ui.btnGoldBar.active=l.default.order.canPay},e.prototype.onShow=function(){this.onR",
+     "replace": ".order.canPay,this.ui.btnGoldBar.active=!1,console.log(\"[solo] 道具商店「代金券充值」页签已隐藏\")},e.prototype.onShow=function(){this.onR"
+    },
+    {
+     "find": "Up:!1,showRed:!1,isGray:!1,isNew:!1,num:e.mfList[o].level};a.getComponent(R.default).setDat",
+     "replace": "Up:!1,showRed:!1,isGray:!1,isNew:!1,num:(e.mfList[o]||{}).level};a.getComponent(R.default).setDat"
+    },
+    {
+     "find": "var t=u.default.sevBack.actChiBang.cleps,e=-1;for(var i in t)e=-1==e?t[i]:Math.m",
+     "replace": "var t=u.default.sevBack.actChiBang.cleps||{},e=-1;for(var i in t)e=-1==e?t[i]:Math.m"
+    },
+    {
+     "find": "Back.actChiBang.cleps[this.itemData.key];c.uiCommon.setLabel(this.txtLv,\"Lv.\"+t)",
+     "replace": "Back.actChiBang.cleps[this.itemData.key]||0;c.uiCommon.setLabel(this.txtLv,\"Lv.\"+t)"
+    },
+    {
+     "find": ",e=u.default.sevBack.actChiBang.cleps[t],i=s.default.chibangClLv.getItem(t,e.toS",
+     "replace": ",e=u.default.sevBack.actChiBang.cleps[t]||0,i=s.default.chibangClLv.getItem(t,e.toS"
+    },
+    {
+     "find": ",o=r.default.sevBack.actChiBang.cleps[e],n=s.default.chibangClLv.getItem(e,o.toS",
+     "replace": ",o=r.default.sevBack.actChiBang.cleps[e]||0,n=s.default.chibangClLv.getItem(e,o.toS"
+    },
+    {
+     "find": ",e=r.default.sevBack.actChiBang.cleps[t],o=s.default.chibangClLvList.getItemList",
+     "replace": ",e=r.default.sevBack.actChiBang.cleps[t]||0,o=s.default.chibangClLvList.getItemList"
+    },
+    {
+     "find": ",e=r.default.sevBack.actChiBang.cleps[t],o=s.default.chibangClLv.getItem(t,e.toS",
+     "replace": ",e=r.default.sevBack.actChiBang.cleps[t]||0,o=s.default.chibangClLv.getItem(t,e.toS"
+    },
+    {
+     "find": ",o=r.default.sevBack.actChiBang.cleps[e],n=s.default.chibangClLvList.getItemList",
+     "replace": ",o=r.default.sevBack.actChiBang.cleps[e]||0,n=s.default.chibangClLvList.getItemList"
+    },
+    {
+     "find": "eckOpen(d.OpenType.miFa))return!1;var e=r.default.sevBack.actWanXiang.mfList[t].step,i=s.default.wanxiangXfstep.getItem",
+     "replace": "eckOpen(d.OpenType.miFa))return!1;var e=(r.default.sevBack.actWanXiang.mfList[t]||{}).step,i=s.default.wanxiangXfstep.getItem"
+    },
+    {
+     "find": "ult.wanxiangXfstep.getItem(e+\"\");return r.default.sevBack.actWanXiang.mfList[t].chip>=o.need},e.prototype.checkMiFaShen",
+     "replace": "ult.wanxiangXfstep.getItem(e+\"\");return (r.default.sevBack.actWanXiang.mfList[t]||{}).chip>=o.need},e.prototype.checkMiFaShen"
+    },
+    {
+     "find": "eckOpen(d.OpenType.miFa))return!1;var e=r.default.sevBack.actWanXiang.mfList[t].level,i=s.default.wanxiangXflv.getItem(",
+     "replace": "eckOpen(d.OpenType.miFa))return!1;var e=(r.default.sevBack.actWanXiang.mfList[t]||{}).level,i=s.default.wanxiangXflv.getItem("
+    },
+    {
+     "find": "(u.gameMethod.isEmpty(i))return!1;var o=r.default.sevBack.actWanXiang.mfList[t].step;if(e>=s.default.wanxiangXfstep.get",
+     "replace": "(u.gameMethod.isEmpty(i))return!1;var o=(r.default.sevBack.actWanXiang.mfList[t]||{}).step;if(e>=s.default.wanxiangXfstep.get"
+    },
+    {
+     "find": "MiFaDescById=function(t,e){for(var i=e||r.default.sevBack.actWanXiang.mfList[t].step,o=s.default.wanxiangXfinfo.getItem",
+     "replace": "MiFaDescById=function(t,e){for(var i=e||(r.default.sevBack.actWanXiang.mfList[t]||{}).step,o=s.default.wanxiangXfinfo.getItem"
+    },
+    {
+     "find": ",n=c.default.sevBack.actChiBang.cleps[t];this.send(s.EquipCuilian.url,i,function",
+     "replace": ",n=c.default.sevBack.actChiBang.cleps[t]||0;this.send(s.EquipCuilian.url,i,function"
+    },
+    {
+     "find": ",o=c.default.sevBack.actChiBang.cleps[i],n=a.default.chibangClLv.getItem(i,o.toS",
+     "replace": ",o=c.default.sevBack.actChiBang.cleps[i]||0,n=a.default.chibangClLv.getItem(i,o.toS"
+    },
+    {
+     "find": "anLi=function(t){if(parseInt(t.uuid)<1e5){var e=s.default.jjcNpc.getItem(t.uuid)",
+     "replace": "anLi=function(t){if(parseInt(t.uuid)<1e5&&u.gameMethod.isEmpty(t.sevBack)){var e=s.default.jjcNpc.getItem(t.uuid)"
+    },
+    {
+     "find": "){var l=o.default.chibangClLv.getItem(u,t.cleps[u].toString());null!=l&&(n=this.ep_mergeKv",
+     "replace": "){var l=o.default.chibangClLv.getItem(u,(t.cleps[u]||0).toString());null!=l&&(n=this.ep_mergeKv"
+    },
+    {
+     "find": ")){var u=o.default.wanxiangXflv.getItem(t.mfList[s].level.toString());null!=u&&(null==e.hp_",
+     "replace": ")){var u=o.default.wanxiangXflv.getItem((t.mfList[s]||{}).level.toString());null!=u&&(null==e.hp_"
+    },
+    {
+     "find": ".atk+=u.atk,e.def+=u.def);for(var l=0,h=t.mfList[s].mwLock;l<h.length;l++){var r=h[l];if(nu",
+     "replace": ".atk+=u.atk,e.def+=u.def);for(var l=0,h=(t.mfList[s]||{}).mwLock;l<h.length;l++){var r=h[l];if(nu"
+    }
+   ]
+  },
+  {
+   "path": "cocos2d-js-min.js",
+   "bytes_in": 1407669,
+   "bytes_out": 1407834,
+   "sha256_in": "3ab83db7ba7752eb505063487721f10a147961fb37ee5fec19c1dd85b370268b",
+   "sha256_out": "9c8d2eb6f865a62509e65b6acf5dfcb26400926566eec2d6a0116b60293d92ec",
+   "rules": [
+    {
+     "find": "ta=function(t){var e=t._renderComponent;e._assembler.updateRenderData(e),t._rend",
+     "replace": "ta=function(t){var e=t._renderComponent;if(!e||!e._assembler){t._renderFlag&=~h,this._next._func(t);return}e._assembler.updateRenderData(e),t._rend"
+    },
+    {
+     "find": "derFlag&=~f,this._next._func(t)},T._render=function(t){var e=t._renderComponent;e._checkBacth(i,t._cullingMask),e._assembler.fillBuffers(e,i),this._next._func(t",
+     "replace": "derFlag&=~f,this._next._func(t)},T._render=function(t){var e=t._renderComponent;if(!e||!e._assembler){this._next._func(t);return}e._checkBacth(i,t._cullingMask),e._assembler.fillBuffers(e,i),this._next._func(t"
+    },
+    {
+     "find": "er=function(t){var e=t._renderComponent;e._checkBacth(i,t._cullingMask),e._assem",
+     "replace": "er=function(t){var e=t._renderComponent;if(!e||!e._assembler){this._next._func(t);return}e._checkBacth(i,t._cullingMask),e._assem"
+    }
+   ]
+  },
+  {
+   "path": "index.html",
+   "bytes_in": 2958,
+   "bytes_out": 3573,
+   "sha256_in": "c8bd29b92c639098080380471c0c5470f20130565132d29bf9fc4a695b244467",
+   "sha256_out": "1a99a03ab60fac50a0525b3ff7093d813a9c34ee48eec4b8d81aa6daf98c46ec",
+   "rules": [
+    {
+     "find": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n\n  <title>Cocos Creator | HXJG</title>\n\n  <!--http://www.html5rocks.com/en/mobile/mobifying/-->\n  <meta name=\"viewport\"\n        content=\"width=device-width,use",
+     "replace": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n  <title>Cocos Creator | HXJG</title>\r\n\r\n  <!--http://www.html5rocks.com/en/mobile/mobifying/-->\r\n  <meta name=\"viewport\"\r\n        content=\"width=device-width,use"
+    },
+    {
+     "find": "le=1, minimum-scale=1,maximum-scale=1\"/>\n\n  <!--https://developer.apple.com/libra",
+     "replace": "le=1, minimum-scale=1,maximum-scale=1\"/>\r\n\r\n  <!--https://developer.apple.com/libra"
+    },
+    {
+     "find": "/SafariHTMLRef/Articles/MetaTags.html-->\n  <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n  <meta name=\"apple-mobile-web-app-stat",
+     "replace": "/SafariHTMLRef/Articles/MetaTags.html-->\r\n  <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\r\n  <meta name=\"apple-mobile-web-app-stat"
+    },
+    {
+     "find": "-bar-style\" content=\"black-translucent\">\n  <meta name=\"format-detection\" content=\"telephone=no\">\n\n  <!-- force webkit on 360 -->\n  <meta name=\"renderer\" content=\"webkit\"/>\n  <meta name=\"force-rendering\" content=\"webkit\"/>\n  <!-- force edge on IE -->\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"/>\n  <meta name=\"msapplication-tap-highlight\" content=\"no\">\n\n  <!-- force full screen on some browser -->\n  <meta name=\"full-screen\" content=\"yes\"/>\n  <meta name=\"x5-fullscreen\" content=\"true\"/>\n  <meta name=\"360-fullscreen\" content=\"true\"/>\n  \n  <!-- force screen orientation on some browser -->\n  <meta name=\"screen-orientation\" content=\"\"/>\n  <meta name=\"x5-orientation\" content=\"\">\n\n  <!--fix fireball/issues/3568 -->\n  <!--<meta name=\"browsermode\" content=\"application\">-->\n  <meta name=\"x5-page-mode\" content=\"app\">\n\n  <!--<link rel=\"apple-touch-icon\" href=\".png\" />-->\n  <!--<link rel=\"apple-touch-icon-precomposed\" href=\".png\" />-->\n\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"style-mobile.css\"/>\n  <link rel=\"icon\" href=\"favicon.ico\"/>\n</head>\n<body>\n  <canvas id=\"GameCanvas\" oncontextmenu",
+     "replace": "-bar-style\" content=\"black-translucent\">\r\n  <meta name=\"format-detection\" content=\"telephone=no\">\r\n\r\n  <!-- force webkit on 360 -->\r\n  <meta name=\"renderer\" content=\"webkit\"/>\r\n  <meta name=\"force-rendering\" content=\"webkit\"/>\r\n  <!-- force edge on IE -->\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"/>\r\n  <meta name=\"msapplication-tap-highlight\" content=\"no\">\r\n\r\n  <!-- force full screen on some browser -->\r\n  <meta name=\"full-screen\" content=\"yes\"/>\r\n  <meta name=\"x5-fullscreen\" content=\"true\"/>\r\n  <meta name=\"360-fullscreen\" content=\"true\"/>\r\n  \r\n  <!-- force screen orientation on some browser -->\r\n  <meta name=\"screen-orientation\" content=\"\"/>\r\n  <meta name=\"x5-orientation\" content=\"\">\r\n\r\n  <!--fix fireball/issues/3568 -->\r\n  <!--<meta name=\"browsermode\" content=\"application\">-->\r\n  <meta name=\"x5-page-mode\" content=\"app\">\r\n\r\n  <!--<link rel=\"apple-touch-icon\" href=\".png\" />-->\r\n  <!--<link rel=\"apple-touch-icon-precomposed\" href=\".png\" />-->\r\n\r\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"style-mobile.css\"/>\r\n  <link rel=\"icon\" href=\"favicon.ico\"/>\r\n</head>\r\n<body>\r\n  <canvas id=\"GameCanvas\" oncontextmenu"
+    },
+    {
+     "find": "preventDefault()\" tabindex=\"0\"></canvas>\n  <div id=\"splash\">\n    <div class=\"progress-bar stripes\">\n      <span style=\"width: 0%\"></span>\n    </div>\n  </div>\n\n<script src=\"src/settings.js\" charset=\"utf-8\"></script>\n\n<script src=\"main.js\" charset=\"utf-8\"></script>\n\n<script type=\"text/javascript\">\n(function () {\n    // open web debugger console\n    if (typeof VConsole !== 'undefined') {\n        window.vConsole = new VConsole();\n    }\n\n    var debug = window._CCSettings.debug;\n    var splash = document.getElementById('splash');\n    splash.style.display = 'block';\n\n    function loadScript (moduleName, cb) {\n      function scriptLoaded () {\n          document.body.removeChild(domScript);\n          domScript.removeEventListener('load', scriptLoaded, false);\n          cb && cb();\n      };\n      var domScript = document.createElement('script');\n      domScript.async = true;\n      domScript.src = moduleName;\n      domScript.addEventListener('load', scriptLoaded, false);\n      document.body.appendChild(domScript);\n    }\n\n    loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js', function () {\n      if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {\n        loadScript(debug ? 'physics.js' : 'physics-min.js', window.boot);\n      }\n      else {\n        window.boot();\n      }\n    });\n})();\n</script>\n</body>\n</html>\n",
+     "replace": "preventDefault()\" tabindex=\"0\"></canvas>\r\n  <div id=\"splash\">\r\n    <div class=\"progress-bar stripes\">\r\n      <span style=\"width: 0%\"></span>\r\n    </div>\r\n  </div>\r\n\r\n<script src=\"src/settings.js\" charset=\"utf-8\"></script>\r\n\r\n<!-- 只读观察器：手动点界面时自动采集目标 UI。从不 open/close/destroy，不会搞死客户端。\r\n     想停用就删这一行。进度看控制台 __WATCH.report() -->\r\n\r\n<!-- 只读 API 抓包器：把发往服务端(:3030)的请求/响应原样记下并落盘到 8125。\r\n     同样从不改请求/响应。统计看控制台 __CAP.report()，想停用就删这一行 -->\r\n\r\n<!-- 只读节点探针：找节点/列按钮/算点击坐标（__HK）。从不改场景。想停用就删这一行 -->\r\n\r\n<script src=\"main.js\" charset=\"utf-8\"></script>\r\n\r\n<script type=\"text/javascript\">\r\n(function () {\r\n    // open web debugger console\r\n    if (typeof VConsole !== 'undefined') {\r\n        window.vConsole = new VConsole();\r\n    }\r\n\r\n    var debug = window._CCSettings.debug;\r\n    var splash = document.getElementById('splash');\r\n    splash.style.display = 'block';\r\n\r\n    function loadScript (moduleName, cb) {\r\n      function scriptLoaded () {\r\n          document.body.removeChild(domScript);\r\n          domScript.removeEventListener('load', scriptLoaded, false);\r\n          cb && cb();\r\n      };\r\n      var domScript = document.createElement('script');\r\n      domScript.async = true;\r\n      domScript.src = moduleName;\r\n      domScript.addEventListener('load', scriptLoaded, false);\r\n      document.body.appendChild(domScript);\r\n    }\r\n\r\n    loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js', function () {\r\n      if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {\r\n        loadScript(debug ? 'physics.js' : 'physics-min.js', window.boot);\r\n      }\r\n      else {\r\n        window.boot();\r\n      }\r\n    });\r\n})();\r\n</script>\r\n</body>\r\n</html>\r\n"
+    }
+   ]
+  }
+ ]
+}

@@ -44,7 +44,8 @@
 shim/          垫片层（11 个运行时模块）
   server_overrides/  两份「存储替换」实现（把官方连 Redis/Mongo 的封装换成 JSON 版）
 launcher/      Electron 启动器（窗口 / 本地静态服务 / 页面注入）
-tools/         工程化脚本（commit-msg 校验钩子）
+patches/       客户端改造规则（9 个文件 / 121 条锚点规则，不含原版文件）
+tools/         `apply_client_rules.py`（施加客户端规则）+ commit-msg 校验钩子
 docs/          架构文档 · 改造点清单 · 自己搭一套的步骤
 ```
 
